@@ -1,4 +1,1 @@
-<script>
-  var x = 3;
-  alert('hello there, I am JavaScript - x is ' + x);
-</script>
+<script type="text/javascript" src="myscript.js"></script>
