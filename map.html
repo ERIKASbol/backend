@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#map {
+			height: 1000px;
+			width: 100%;
+		}
+	}
+	</style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<script> 
+	function initMap()
+	{
+		var i;
+		var locations = new Array();
+		var titles = new Array();
+		locations [0] = {lat: 54.9, lng: 23.9};
+		locations [1] = {lat: 19.576359, lng: 4.428246};
+		locations [2] = {lat: 20, lng: 20};
+		titles [0] = "Vairuotojas 1";
+		titles [1] = "Vairuotojas 2";
+		titles [2] = "Kazkas ten turetu buti";
+		//var location = {lat: 54.9, lng: 23.9};
+		//var locatione = {lat: 19.576359, lng: 4.428246};
+		var map = new google.maps.Map(document.getElementById("map"),{
+			zoom: 4,
+			center: {lat: 54.9, lng: 23.9}
+		});
+		for (i = 0; i<=locations.length;i++)
+		{
+			addMarker(locations[i], titles[i]);
+		}
+		function addMarker(coords, pav)
+		{
+			var marker = new google.maps.Marker({
+				position:coords,
+				map: map,
+				title: pav
+			});
+		}
+	}
+</script>
+<script
+async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNDYKlvBlpgJePS6mOQ6jK6Qghl9xkNZs&callback=initMap"></script>
+
+</body>
+</html>	
