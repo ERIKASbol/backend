@@ -1,57 +1,61 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<style>
-		*{
-			margin: 0;
-			padding: 0;
-		}
-		#map {
-			height: 1000px;
-			width: 100%;
-		}
-	}
-	</style>
-</head>
-<body>
-
-<div id="map"></div>
-
-<script> 
-	function initMap()
-	{
-		var i;
-		var locations = new Array();
-		var titles = new Array();
-		locations [0] = {lat: 54.9, lng: 23.9};
-		locations [1] = {lat: 19.576359, lng: 4.428246};
-		locations [2] = {lat: 20, lng: 20};
-		titles [0] = "Vairuotojas 1";
-		titles [1] = "Vairuotojas 2";
-		titles [2] = "Kazkas ten turetu buti";
-		//var location = {lat: 54.9, lng: 23.9};
-		//var locatione = {lat: 19.576359, lng: 4.428246};
-		var map = new google.maps.Map(document.getElementById("map"),{
-			zoom: 4,
-			center: {lat: 54.9, lng: 23.9}
-		});
-		for (i = 0; i<=locations.length;i++)
-		{
-			addMarker(locations[i], titles[i]);
-		}
-		function addMarker(coords, pav)
-		{
-			var marker = new google.maps.Marker({
-				position:coords,
-				map: map,
-				title: pav
-			});
-		}
-	}
-</script>
-<script
-async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNDYKlvBlpgJePS6mOQ6jK6Qghl9xkNZs&callback=initMap"></script>
-
-</body>
-</html>	
+<!DOCTYPE html>   
+<html>   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<title> Login Page </title>  
+<style>   
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: #DCDCDC;  
+}  
+button {   
+       background-color: #4CAF50;   
+       width: 100%;  
+        color: orange;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ form {   
+        border: 3px solid #000000;   
+    }   
+ input[type=text], input[type=password] {   
+        width: 100%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box;   
+    }  
+ button:hover {   
+        opacity: 0.7;   
+    }   
+  .cancelbtn {   
+        width: 30%; 
+        padding: 10px 18px;  
+        margin: 10px 92px;  
+    }   
+        
+     
+ .container {   
+        padding: 20px;   
+        background-color: lightgrey;  
+    }   
+</style>   
+</head>    
+<body>    
+    <center> <h1> Prisijungimas </h1> </center>   
+    <form>  
+        <div class="container">   
+            <label>Username : </label>   
+            <input type="text" placeholder="Enter Username" name="username" required>  
+            <label>Password : </label>   
+            <input type="password" placeholder="Enter Password" name="password" required>  
+            <button type="submit">Login</button>   
+            <input type="checkbox" checked="checked"> Remember me
+            <button type="button" class="cancelbtn"> Cancel</button>     
+        </div>   
+    </form>     
+</body>     
+</html>  
